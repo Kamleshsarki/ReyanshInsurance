@@ -17,8 +17,9 @@ app.use(express.json())
 
 
 app.post('/clients',(req,res)=>{
-db.query(`INSERT INTO clients (name, email, password)
-VALUES ("${req.body.name}", "${req.body.email}","${req.body.password}")`, e =>{
+db.query(`INSERT INTO clients (name, email, phone,address,city,state,zip)
+VALUES ("${req.body.name}", "${req.body.email}","${req.body.phone}",
+"${req.body.address}","${req.body.city}","${req.body.state}","${req.body.zip}")`, e =>{
     if(e){
         console.log(e)
     }

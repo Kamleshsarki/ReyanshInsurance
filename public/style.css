@@ -1,0 +1,11 @@
+body{
+    background-size: cover;
+ background-image: url("./life-In.png");
+ background-repeat: no-repeat;
+
+}
+
+
+h1{
+    font-family: 'Limelight',cursive;
+}

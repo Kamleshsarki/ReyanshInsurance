@@ -5,26 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="container">
+    <h1>Reyansh Insurance</h1>
+    <h4>Need Life Insurance and health Insurance?</h4>
     <form>
         <p>
-            <label htmlFor="name">name</label>
-            <input type = "name" name= "name" id="name"/>
+            <label htmlFor="name">Name</label>
+            <input type = "name" name= "name" id="name" placeholder="Enter your name"/>
           </p>
         <p>
-          <label htmlFor="email">Email</label>
-          <input type = "email" name= "email" id="email"/>
+          <label for="exampleFormControlInput1" class="form-label" htmlFor="email">Email</label>
+          <input type = "email" name= "email" id="email"placeholder="name@example.com"/>
         </p>
     
         <p>
-          <label htmlFor = "password">password</label>
-          <input type="password" name ="password" id="password"/>
-    
+          <label htmlFor = "phone">Number</label>
+          <input type="phone" name ="phone" id="phone"placeholder="Mobile Number"/>
         </p>
+
+      <h6>Address</h6>
         <p>
-          <button id = "submit">Submit</button>
+            <label htmlFor = "address">Street No.</label>
+            <input type="address" name ="address" id="address" placeholder="Apt/street no."/>
+          </p>
+
+          <p>
+            <label htmlFor = "city">City</label>
+            <input type="city" name ="city" id="city"placeholder="city"/>
+          </p>
+
+          <p>
+            <label htmlFor = "state">State</label>
+            <input type="state" name ="state" id="state" placeholder="State"/>
+          </p>
+
+
+          <p>
+            <label htmlFor = "zip">Zip</label>
+            <input type="zip" name ="zip" id="zip"placeholder="Zipcode"/>
+          </p>
+
+        <p>
+          <button type="button" class="btn btn-success" id = "submit">Submit</button>
+
+          
         </p>
       </form>
      
@@ -39,11 +70,15 @@
               let client = {
                   name: document.getElementById('name').value,
                   email: document.getElementById('email').value,
-                  password: document.getElementById('password').value
+                  phone: document.getElementById('phone').value,
+                  address: document.getElementById('address').value,
+                  city: document.getElementById('city').value,
+                  state: document.getElementById('state').value,
+                  zip: document.getElementById('zip').value
               }
-              console.log(user)
+              console.log(client)
              
-              axios.post('/users', user)
+              axios.post('/clients', client)
               .then(res =>{
                 console.log(res)
               })
@@ -51,11 +86,17 @@
 
               document.getElementById('name').value = '',
               document.getElementById('email').value ='' ,
-              document.getElementById('password').value ='' 
+              document.getElementById('phone').value ='',
+              document.getElementById('address').value ='',
+              document.getElementById('city').value='',
+              document.getElementById('state').value='',
+              document.getElementById('zip').value=''
           })
 
        
           
       </script>
-</body>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </div>
+    </body>
 </html>
