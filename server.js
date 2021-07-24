@@ -23,12 +23,17 @@ VALUES ("${req.body.name}", "${req.body.email}","${req.body.phone}",
     if(e){
         console.log(e)
     }
-    res.json({
-        name: 'hotdog'
+    res.sendStatus(200)
+})
+})
+//Get all clients
+
+app.get('/clients',(req,res)=>{
+    db.query('SELECT* FROM clients',(e, clients)=>{
+        if(e){
+            console.log(e)
+        }
+        res.json(clients)
     })
 })
-})
-
-
-
 app.listen(3000)    
